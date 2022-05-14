@@ -25,7 +25,7 @@ public class CompanyRegistrationService {
     public Company registerCompany(Company company){
         Optional<Company> companyOptional = companyRepository.findByCompanyCode(company.getCompanyCode());
         if(!companyOptional.isPresent()){
-            company.setCompanyCode(UUID.randomUUID().toString());
+            //company.setCompanyCode(UUID.randomUUID().toString());
             return companyRepository.save(company);
         }
         else{
